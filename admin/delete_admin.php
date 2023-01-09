@@ -1,0 +1,16 @@
+<?php 
+include '../koneksi.php';
+$id = $_GET['id'];
+$delete = $conn->query("DELETE FROM user WHERE id='$id' AND class='admin'");
+
+if($delete){
+echo "<script>window.location.href='admin.php';
+alert('Data berhasil di Hapus');</script>";
+}
+else
+{
+echo "<script>window.location.href='admin.php';
+alert('Data gagal dihapus');</script>";
+}
+
+?>
